@@ -1,0 +1,17 @@
+{% extends 'home.html' %} 
+        
+        {% block content %} 
+        {% with messages = get_flashed_messages() %}  
+         {% if messages %}  
+               {% for message in messages %}  
+                    <p>{{ message }}</p>  
+               {% endfor %}  
+         {% endif %}  
+        {% endwith %}  
+            <h1> Question 1</h1>
+            <p>Have you shopped here before?</p>
+            <form action="/answer" method="POST">
+                <input type="text" placehodler="answer" name="answer">
+                <button>SUBMIT ANSWER</button>
+            </form>
+{% endblock %}
